@@ -1,0 +1,177 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title> Luck percentage calculator</title>
+<style>
+    body {
+        background-image: url(https://i.stack.imgur.com/jGlzr.png);
+        margin:auto;
+        border: solid black 9px;
+            padding:active;
+        text-align:center;
+       display:block;
+        
+        
+        animation:spin 18s linear alternate infinite;
+}
+
+@keyframes spin{
+100%{background-position:150%;}
+}
+        }
+    
+    #click{
+        text-align: center;
+           
+    }
+    h2{
+     box-shadow:-20px -20px 60px 4px #000;   
+    }
+     input {
+            color:darkgreen;
+            background-color:burlywood;
+         }
+    body:hover{
+        background-color: antiquewhite;
+        
+    }
+    h2:hover {
+        background-color: darkred;
+    }
+    input:hover{
+        background-color: chocolate;
+        
+    }
+   
+    </style>
+    
+    </head>
+<body>
+    <div id="doc">
+    
+        <br>
+    <div id="box">
+    <h2><font color="red"> <u> Hello!     Calculate your luck percent </u> </font> </h2>
+    <br>
+    <br>
+    <div id="abc">
+    <form name="forms" action="#">
+        <label> Enter your name: </label>
+        <input type="text" name="name" id="name" placeholder="abc xyz" required>
+        <br>
+        <p>
+            
+            <label> Enter your DOB: </label>
+        <input type="number" placeholder="dd/mm/yy" name="dob" id="dob" required>
+        <br>
+        </p>
+        <p>
+        <label> Gender:</label>
+            <input type="radio" name="Male"   id="male"  value="male">Male
+             <input type="radio" name="Male" id="female"  value="female">Female<br>
+        
+        </p>
+      
+            
+       <p>
+           <input type="button" value="Click me!" id="click" onclick="luck()" >
+        </p>
+        
+            <div id="result">
+                <label><strong>Your luck percentage:</strong></label>
+        <input type="text" name="xyz" id="results"  >  </div>
+        </br>
+                
+                <div>
+     <input type="button" value="click here for more" name="btn" id="btn"  onclick="strt()" >
+                    
+                    <input type="button" value="Check another" name="btn" id="btnss"  onclick="allclr()" >
+                    
+                     <input type="button" value="Exit" name="btn" id="btns"  onclick="clr()" >
+      
+      
+  </div>
+        
+        
+       
+        </form>
+    </div>
+   
+     <script>
+         var d;
+         var c;
+       
+      var c = confirm("Do you really wish to know your luck percentage?");
+
+    if(c == 1) {
+        
+        alert('welcome');
+    }     
+         else{
+         
+       var x =  document.getElementById('doc').innerHTML = "<h1><u><i> Thank you! </i> </u> </h1>"; 
+      
+         }
+
+function luck(){ 
+var user=document.getElementById('name').value; if(user == "")  {
+alert("Please enter your name!"); return false; }
+
+else if(user.length<=3) {
+     alert("min character of name should be 4"); return false;
+}
+
+user=document.getElementById('dob').value;
+
+  if(user == "")  {
+alert("Please enter your dob!"); return false; }
+
+if(user == NaN )  {
+alert("Please enter numbers!"); return false; }
+
+if(user.length!=8 )  {
+alert("Please follow the format: ddmmyyyy"); return false; }
+    
+    
+  d= Math.random()*100; d =Math.floor(d); document.getElementById('results').value = d;
+}
+
+function strt() {
+  
+  if(d <= 50) {
+      
+       document.getElementById('doc').innerHTML= "Don't worry..";
+  }
+  else if(d <= 85){
+      
+      document.getElementById('doc').innerHTML= "Oh! good..";
+     }
+   
+    else if(d >= 85){
+      
+      document.getElementById('doc').innerHTML= "Wow! excellent..";
+     }
+}
+         
+         function allclr() {
+             
+             document.getElementById('name').value="";
+             
+             document.getElementById('dob').value="";
+             
+             document.getElementById('results').value="";
+         }
+         
+     function clr() {
+             
+             document.getElementById('doc').innerHTML= "";
+         }
+         
+</script>
+       
+    
+     </div>
+     </div>
+    
+    </body>
+</html>
